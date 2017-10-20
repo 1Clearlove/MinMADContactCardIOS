@@ -17,6 +17,7 @@
 		976452441F98B858008EFB2D /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976452431F98B858008EFB2D /* PersonTableViewController.swift */; };
 		976452461F98BA86008EFB2D /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976452451F98BA86008EFB2D /* Person.swift */; };
 		976452481F98D7B3008EFB2D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 976452471F98D7B3008EFB2D /* Settings.bundle */; };
+		991C21FE1F9A4B32003F476B /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C21FD1F9A4B32003F476B /* RestApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		976452431F98B858008EFB2D /* PersonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonTableViewController.swift; path = ../PersonTableViewController.swift; sourceTree = "<group>"; };
 		976452451F98BA86008EFB2D /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		976452471F98D7B3008EFB2D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		991C21FD1F9A4B32003F476B /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		97296D2D1F989559004105C0 /* Contact Card */ = {
 			isa = PBXGroup;
 			children = (
+				991C21FD1F9A4B32003F476B /* RestApiManager.swift */,
 				97296D2E1F989559004105C0 /* AppDelegate.swift */,
 				97296D301F989559004105C0 /* ViewController.swift */,
 				97296D321F989559004105C0 /* Main.storyboard */,
@@ -157,6 +160,7 @@
 				97296D311F989559004105C0 /* ViewController.swift in Sources */,
 				97296D2F1F989559004105C0 /* AppDelegate.swift in Sources */,
 				976452401F98B2AE008EFB2D /* PersonTableViewCell.swift in Sources */,
+				991C21FE1F9A4B32003F476B /* RestApiManager.swift in Sources */,
 				973B034D1F98A32B00563FFA /* SummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

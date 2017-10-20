@@ -18,7 +18,8 @@ class PersonTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadSamplePersons()
+        getPersonData()
+        //loadSamplePersons()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -67,6 +68,53 @@ class PersonTableViewController: UITableViewController {
                 }
             }
         }
+    }
+    
+    
+    func getPersonData(){
+        let connection = RestApiManager.sharedInstance
+        connection.getPersons( {(json: NSDictionary?, error: NSError?) -> Void in
+            
+            if(error == nil) {
+                
+                // Get personsarray
+                let resultObject = json?.object(forKey: "results") as? NSArray
+                
+                // for every person in the array
+                for results in resultObject! {
+                    
+                    let result = results as! NSObject
+                    
+                    let nameObject = result.value(forKey: "name") as? NSObject
+                    let firstNameString = nameObject?.value(forKey: "first") as? String
+                    let lastNameString = nameObject?.value(forKey: "last") as? String
+                    let name = firstNameString! + lastNameString!
+                    
+                    //let locationObject = result.value(forKey: "location") as? NSObject
+                    //let streetString = locationObject?.value(forKey: "street") as? String
+                    //let cityString = locationObject?.value(forKey: "city") as? String
+                    //let stateString = locationObject?.value(forKey: "state") as? String
+                    
+                    //let pictureObject = result.value(forKey: "picture") as? NSObject
+                    //let largeString = pictureObject?.value(forKey: "large") as? String
+                    //let mediumString = pictureObject?.value(forKey: "medium") as? String
+                    //let thumbnailString = pictureObject?.value(forKey: "thumbnail") as? String
+                    
+                    //let emailString = result.value(forKey: "email") as? String
+                    let person = Person(name: name)
+                    
+                    
+                    // ! Important, alleen op de main thread UI update!
+                    DispatchQueue.main.async(execute: {
+                        self.persons.append(person)
+                        self.tableView.reloadData()
+                    })
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        })
+        
     }
 
 

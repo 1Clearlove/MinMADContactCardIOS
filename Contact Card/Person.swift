@@ -20,4 +20,8 @@ class Person {
         self.name = name
         self.photo = photo
     }
+    
+    init(name: String){
+        self.name = name
+    }
 }
